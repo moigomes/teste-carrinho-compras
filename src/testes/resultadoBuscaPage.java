@@ -11,13 +11,11 @@ public class resultadoBuscaPage {
 	private WebDriver driver;
 
 	public resultadoBuscaPage(WebDriver driver) {
-		
 		this.driver = driver;
 	}
 	
 	public void selecionaPruduto(String produto) {
 		driver.findElement(By.linkText(produto)).click();
-		
 	}
 	
 }

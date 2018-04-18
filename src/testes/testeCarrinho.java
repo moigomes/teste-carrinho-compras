@@ -16,7 +16,6 @@ public class testeCarrinho {
 	
 	@Test
 	public void testeCarrinho() {
-		
 		System.setProperty("webdriver.gecko.driver", "geckodriver.exe");
 		WebDriver driver = new FirefoxDriver();
 		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
@@ -32,6 +31,8 @@ public class testeCarrinho {
 		produtoSelecionado.adicionaProdutoAoCarrinho(1);
 		produtoSelecionado.clicaEmContinuarCompra();
 		
+		
+		
 		homePage homePage2 = new homePage(driver);
 		homePage.pesquisar("Iphone");
 		
@@ -43,15 +44,11 @@ public class testeCarrinho {
 		produtoSelecionado2.clicaEmContinuarCompra();
 		
 		
+		
 		carrinhoComprasPage carrinhoComprasPage = new carrinhoComprasPage(driver);
 		carrinhoComprasPage.confereProdutosCarrinho(produtoSelecionado.getNomeProduto(), produtoSelecionado2.getNomeProduto());
 		carrinhoComprasPage.confereTotalCarrinho(produtoSelecionado.calculaTotal() + produtoSelecionado2.calculaTotal());
 		
-		
-		
-		
-		driver.close();
-			
+		driver.close();	
 	}
-
 }

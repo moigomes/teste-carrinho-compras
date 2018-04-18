@@ -14,20 +14,15 @@ public class homePage {
 	
 	private WebDriver driver;
 	
-	
 	public homePage(WebDriver driver) {
-		this.driver = driver;
-		
+		this.driver = driver;	
 	}
-	
 	
 	public void pesquisar(String produto) {
 		WebElement campoPesquisa = driver.findElement(By.id("search_input"));
 		campoPesquisa.clear();
 		campoPesquisa.sendKeys(produto);
-		campoPesquisa.submit();
-			
+		campoPesquisa.submit();		
 	}
-	
 	
 }
